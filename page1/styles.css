@@ -1,0 +1,147 @@
+@font-face {
+    font-family: juliett-regular;
+    src: url(assets/JuliettRegular-WyXyG.ttf);
+}
+
+body {
+    margin: 0;
+    font-family: juliett-regular, 'Arial', sans-serif;
+    background: url('assets/pexels-frankie-hatton-1028462.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+#side-panel {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    background-color: rgba(17, 85, 17, 0.6);
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5em;
+    word-wrap: break-word;
+}
+
+#message-container {
+    font-size: 180%;
+}
+
+#message-container,
+#room-name,
+#availability,
+#ongoing-event,
+#event-time {
+    text-align: center;
+    color: #fff;
+}
+
+#room-name {
+    font-size: 3em;
+    /* Increased font size for the meeting room name */
+    font-weight: bold;
+}
+
+#availability {
+    font-size: 2.5em;
+    border-radius: 0.3em;
+    /* Add text shadow for better readability */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+#availability.available {
+    background-color: green;
+    color: #fff;
+}
+
+#availability.unavailable {
+    background-color: red;
+    color: #fff;
+}
+
+#ongoing-event,
+#event-time {
+    font-size: 1.7em;
+}
+
+#event-time {
+    margin-top: 0.5em;
+}
+
+#change-message-btn {
+    position: fixed;
+    top: 1em;
+    right: 1em;
+    padding: 0.5em;
+    font-size: 1.2em;
+    cursor: pointer;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 0.5em;
+    outline: none;
+    transition: background-color 0.3s ease;
+    z-index: 2;
+}
+
+#change-message-btn:hover {
+    background-color: #2980b9;
+}
+
+#digital-clock {
+    position: fixed;
+    bottom: 1em;
+    right: 1em;
+    font-size: 2em;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    text-align: end;
+}
+
+#day,
+#date,
+#time {
+    font-size: 1.5em;
+    margin-top: 0.2em;
+}
+
+#time {
+    font-size: 3em;
+    margin-top: 0;
+}
+
+/* Landscape TV Sizes */
+@media only screen and (min-width: 1280px) and (min-height: 720px) {
+    /* Styles for 720p TVs */
+}
+
+@media only screen and (min-width: 1920px) and (min-height: 1080px) {
+
+    /* Styles for 1080p TVs */
+    #message-container {
+        font-size: 140%;
+    }
+}
+
+/* Portrait TV Sizes */
+@media only screen and (min-width: 720px) and (min-height: 1280px) {
+    /* Styles for 720p TVs in portrait mode */
+}
+
+@media only screen and (min-width: 1080px) and (min-height: 1920px) {
+
+    /* Styles for 1080p TVs in portrait mode */
+    #side-panel {
+        width: 40%;
+    }
+
+    #message-container {
+        font-size: 155%;
+    }
+}
