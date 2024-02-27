@@ -1,35 +1,39 @@
+@font-face {
+    font-family: salmapro;
+    src: url(assets/SalmaproMedium-yw9ad.otf);
+}
+
 body {
     margin: 0;
-    font-family: 'Arial', sans-serif;
+    font-family: salmapro, 'Arial', sans-serif;
     background: url('assets/sergey-shmidt-koy6FlCCy5s-unsplash.jpg') no-repeat center center fixed;
     background-size: cover;
     height: 100vh;
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    align-items: center;
     /* Center content horizontally */
-    justify-content: center;
+    align-items: center;
     /* Center content vertically */
+    justify-content: center;
 }
 
 #middle-panel {
     background-color: rgba(232, 160, 27, 0.9);
-    /* Updated opacity to 0.9 */
     z-index: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 2em;
     /* Increase the padding for more space between text and borders */
+    padding: 2em;
     word-wrap: break-word;
-    max-width: 50%;
     /* Set max-width to 50% */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    max-width: 50%;
     /* Add a subtle box shadow */
-    border-radius: 6%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     /* Adjust the value to control the roundness of corners */
+    border-radius: 6%;
 }
 
 #message-container,
@@ -38,24 +42,24 @@ body {
 #ongoing-event,
 #event-time {
     text-align: center;
-    color: black;
     /* Set text color to black */
-    text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.8);
+    color: black;
     /* Add a dark-colored text shadow */
+    text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.8);
 }
 
 #room-name {
-    font-size: 3em;
     /* Increased font size for the meeting room name */
+    font-size: 4em;
     font-weight: bold;
 }
 
 #availability {
-    font-size: 2.5em;
+    font-size: 3.5em;
     padding: 0.5em;
     border-radius: 0.3em;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
     /* Add text shadow for better readability */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 #availability.available {
@@ -71,7 +75,7 @@ body {
 
 #ongoing-event,
 #event-time {
-    font-size: 1.7em;
+    font-size: 2.3em;
 }
 
 #event-time {
@@ -81,7 +85,7 @@ body {
 #change-message-btn {
     position: fixed;
     top: 1em;
-    right: 1em;
+    right: 5em;
     padding: 0.5em;
     font-size: 1.2em;
     cursor: pointer;
@@ -100,12 +104,13 @@ body {
 
 #digital-clock {
     position: fixed;
-    bottom: 1em;
-    right: 1em;
+    bottom: 2em;
+    right: 4em;
     font-size: 1.5em;
     color: #fff;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
     text-align: end;
+    z-index: 2;
 }
 
 #day,
@@ -125,25 +130,25 @@ body {
 }
 
 @media only screen and (min-width: 1920px) and (min-height: 1080px) {
+
     /* Styles for 1080p TVs */
-    #message-container {
-        font-size: 140%;
+    body {
+        font-size: 150%;
     }
 }
 
 /* Portrait TV Sizes */
 @media only screen and (min-width: 720px) and (min-height: 1280px) {
     /* Styles for 720p TVs in portrait mode */
+    #digital-clock {
+        bottom: 3em;
+        right: 3em;
+    }
 }
 
 @media only screen and (min-width: 1080px) and (min-height: 1920px) {
-
     /* Styles for 1080p TVs in portrait mode */
-    #side-panel {
-        width: 40%;
-    }
-
-    #message-container {
-        font-size: 155%;
+    body {
+        font-size: 150%;
     }
 }

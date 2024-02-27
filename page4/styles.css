@@ -1,0 +1,237 @@
+@font-face {
+    font-family: qaz;
+    src: url(assets/Qaz-K7LVo.ttf);
+}
+
+body {
+    margin: 0;
+    font-family: qaz, 'Arial', sans-serif;
+    background: url('assets/eric-muhr-ExG60Tc_e8I-unsplash.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    /* Center content horizontally */
+    align-items: center;
+    /* Center content vertically */
+    justify-content: center;
+}
+
+/* https://stackoverflow.com/questions/49444916/hide-background-image-overflow-equally-from-left-and-right */
+#bgImg {
+    /* We'll be positioning the <img> relative to the <div>. */
+    position: relative;
+    /* Don't let an oversized background image stretch out the <div>. */
+    overflow: hidden;
+}
+
+#bgImg>img {
+    /* Since the image is an <img> element and not a background-image,
+    we don't have to worry about it shrinking, but we do need to
+    explicitly make it no smaller than the containing <div>. */
+    min-width: 100%;
+    /* Don't get in the way of positioning other elements. */
+    position: absolute;
+    /* Move the left edge of the image to the center of the <div>, then
+    shift it back by half the width of the <img>. Result: centered
+    image. */
+    left: 50%;
+    transform: translateX(-50%);
+    /* It's supposed to be a background image, so put it behind other
+    content. */
+    z-index: -1;
+}
+
+.left-panel {
+    background-color: rgba(25, 25, 25, 0.6);
+    display: flex;
+    justify-content: center;
+    word-wrap: break-word;
+    flex: 2.5;
+    height: 100%;
+    z-index: 1;
+}
+
+#message-container {
+    margin: 0 5em;
+}
+
+#room-name,
+#availability,
+#ongoing-event,
+#event-time {
+    text-align: left;
+    color: white;
+    text-shadow: 0.5px 0.5px 2px rgba(0, 0, 0, 0.8);
+    line-height: 0.9em;
+}
+
+#room-name {
+    font-size: 6em;
+    font-weight: bold;
+}
+
+#availability {
+    font-size: 4.5em;
+}
+
+#availability.available {
+    background-color: green;
+    color: #fff;
+}
+
+#availability.unavailable {
+    background-color: red;
+    color: #fff;
+}
+
+#ongoing-event,
+#event-time {
+    font-size: 3em;
+}
+
+#event-time {
+    margin-top: 0.5em;
+}
+
+.right-panel {
+    background-color: rgb(27, 27, 27, 0.9);
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    word-wrap: break-word;
+    flex: 1;
+    height: 100%;
+}
+
+#next-event {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 2.5em;
+    flex: 2.8;
+    width: auto;
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    word-wrap: break-word;
+    margin-top: 10%;
+}
+
+#next-event #title {
+    font-weight: bold;
+}
+
+#next-event #details {
+    line-height: 1.5em;
+}
+
+hr {
+    width: 85%;
+}
+
+#digital-clock {
+    flex: 1;
+    width: auto;
+    font-size: 1.5em;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    text-align: center;
+    width: 100%;
+}
+
+#change-message-btn {
+    position: fixed;
+    top: 1em;
+    right: 1em;
+    padding: 0.5em;
+    font-size: 1.2em;
+    cursor: pointer;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 0.5em;
+    outline: none;
+    transition: background-color 0.3s ease;
+    z-index: 2;
+}
+
+#change-message-btn:hover {
+    background-color: #2980b9;
+}
+
+#day,
+#date {
+    font-size: 1.5em;
+    margin-top: 0.2em;
+}
+
+#time {
+    font-size: 3em;
+    margin-top: 0;
+}
+
+/* Landscape TV Sizes */
+@media only screen and (min-width: 1280px) and (min-height: 720px) {
+    /* Styles for 720p TVs */
+}
+
+@media only screen and (min-width: 1920px) and (min-height: 1080px) {
+
+    /* Styles for 1080p TVs */
+    body {
+        font-size: 150%;
+    }
+}
+
+/* Portrait TV Sizes */
+@media only screen and (min-width: 720px) and (min-height: 1280px) {
+
+    /* Styles for 720p TVs in portrait mode */
+    body {
+        margin: 0;
+        background-attachment: fixed;
+        flex-direction: column;
+        font-size: 85%;
+        max-width: 100%;
+    }
+
+    #bgImg>img {
+        min-height: 100%;
+    }
+
+    .left-panel {
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+    
+    .right-panel {
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #message-container {
+        margin: 2em;
+    }
+}
+
+@media only screen and (min-width: 1080px) and (min-height: 1920px) {
+
+    /* Styles for 1080p TVs in portrait mode */
+    #message-container {
+        font-size: 180%;
+        margin: 10em auto auto auto;
+    }
+
+    #availability {
+        font-size: 280%;
+    }
+
+    #ongoing-event,
+    #event-time {
+        font-size: 200%;
+    }
+
+}

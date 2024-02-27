@@ -1,99 +1,106 @@
+@font-face {
+    font-family: swansea-bold;
+    src: url(assets/SwanseaBold-D0ox.ttf);
+}
+
 body {
     margin: 0;
-    font-family: 'Arial', sans-serif;
+    font-family: swansea-bold, 'Arial', sans-serif;
     background: url('assets/ryan-klaus-IncXhM8rKSc-unsplash.jpg') no-repeat center center fixed;
     background-size: cover;
     height: 100vh;
-    /* overflow: hidden; */
     display: flex;
     flex-direction: column;
-    align-items: center;
     /* Center content horizontally */
-    justify-content: center;
+    align-items: center;
     /* Center content vertically */
+    justify-content: center;
+
+    font-size: 5em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    text-align: left;
+    line-height: 0.8em;
+    color: white;
+}
+
+/* https://stackoverflow.com/questions/49444916/hide-background-image-overflow-equally-from-left-and-right */
+#bgImg {
+    /* We'll be positioning the <img> relative to the <div>. */
+    position: relative;
+    /* Don't let an oversized background image stretch out the <div>. */
+    overflow: hidden;
+}
+
+#bgImg>img {
+    /* Since the image is an <img> element and not a background-image,
+    we don't have to worry about it shrinking, but we do need to
+    explicitly make it no smaller than the containing <div>. */
+    min-width: 100%;
+    /* Don't get in the way of positioning other elements. */
+    position: absolute;
+    /* Move the left edge of the image to the center of the <div>, then
+    shift it back by half the width of the <img>. Result: centered
+    image. */
+    left: 50%;
+    transform: translateX(-50%);
+    /* It's supposed to be a background image, so put it behind other
+    content. */
+    z-index: -1;
 }
 
 #middle-panel {
     background-color: rgba(9, 151, 188, 0.7);
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    word-wrap: break-word;
     width: 100%;
     height: 100%;
+    z-index: 1;
 }
 
 #message-container {
-    margin: 3em auto auto 7em;
+    word-wrap: break-word;
+    margin: 1em auto auto 1em;
     inset: 0;
 }
 
-#message-container,
-#room-name,
-#availability,
-#ongoing-event,
-#event-time,
-#digital-clock {
-    /* Include the digital-clock in the selector */
-    text-align: left;
-    color: white;
-    text-shadow: 0.5px 0.5px 2px rgba(0, 0, 0, 0.8);
-}
-
 #room-name {
-    font-size: 3em;
+    font-size: 120%;
     font-weight: bold;
 }
 
-#availability {
-    font-size: 2.5em;
-    border-radius: 0.3em;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+#availability,
+#ongoing-event,
+#event-time {
+    font-size: 70%;
 }
 
 #availability.available {
     background-color: green;
-    color: #fff;
 }
 
 #availability.unavailable {
     background-color: red;
-    color: #fff;
-}
-
-#ongoing-event,
-#event-time {
-    font-size: 1.7em;
-}
-
-#event-time {
-    margin-top: 0.5em;
 }
 
 #digital-clock {
-    position: fixed;
-    bottom: 0.6em;
-    right: 1em;
-    font-size: 1.5em;
-    color: #fff;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    position: absolute;
+    font-size: 60%;
     text-align: end;
+    bottom: 1.3em;
+    right: 0.6em;
+    z-index: 2;
 }
 
 #change-message-btn {
-    position: fixed;
+    position: absolute;
     top: 1em;
     right: 1em;
+    aspect-ratio: 1 / 1;
     padding: 0.5em;
-    font-size: 1.2em;
+    font-size: 19%;
     cursor: pointer;
     background-color: #3498db;
     color: #fff;
-    border: none;
+    border: black solid 2px;
     border-radius: 0.5em;
-    outline: none;
     transition: background-color 0.3s ease;
     z-index: 2;
 }
@@ -102,15 +109,9 @@ body {
     background-color: #2980b9;
 }
 
-#day,
-#date {
-    font-size: 1.5em;
-    margin-top: 0.2em;
-}
-
 #time {
     font-size: 3em;
-    margin-top: 0;
+    margin-top: 0.4em;
 }
 
 /* Landscape TV Sizes */
@@ -121,44 +122,32 @@ body {
 @media only screen and (min-width: 1920px) and (min-height: 1080px) {
 
     /* Styles for 1080p TVs */
-    #message-container {
-        font-size: 150%;
+    body {
+        font-size: 7em;
     }
 }
 
 /* Portrait TV Sizes */
 @media only screen and (min-width: 720px) and (min-height: 1280px) {
+
     /* Styles for 720p TVs in portrait mode */
-    #message-container {
-        font-size: 120%;
-        margin: 9em auto auto auto;
-    }
-
-    #availability {
-        font-size: 270%;
-    }
-
-    #ongoing-event,
-    #event-time {
-        font-size: 190%;
+    #room-name {
+        line-height: 1.2em;
     }
 }
 
 @media only screen and (min-width: 1080px) and (min-height: 1920px) {
 
     /* Styles for 1080p TVs in portrait mode */
+    body {
+        font-size: 7.2em;
+    }
+
     #message-container {
-        font-size: 180%;
-        margin: 10em auto auto auto;
+        margin-right: 0.5em;
     }
 
-    #availability {
-        font-size: 280%;
+    #room-name {
+        line-height: 1.2em;
     }
-
-    #ongoing-event,
-    #event-time {
-        font-size: 200%;
-    }
-
 }

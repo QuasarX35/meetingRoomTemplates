@@ -1,7 +1,7 @@
 const messages = [
     { roomName: "Meeting Room A", availability: "Available", ongoingEvent: "", eventTime: "" },
-    { roomName: "Meeting Room B", availability: "Unavailable", ongoingEvent: "Maintenance", eventTime: "Start: 3:00 PM - End: 4:00 PM" },
-    { roomName: "Conference Room X", availability: "Unavailable", ongoingEvent: "Team Meeting", eventTime: "Start: 10:00 AM - End: 11:30 AM" },
+    { roomName: "Meeting Room B", availability: "Unavailable", ongoingEvent: "Maintenance", eventTime: "3:00 PM - 4:00 PM" },
+    { roomName: "Conference Room X", availability: "Unavailable", ongoingEvent: "Team Meeting", eventTime: "10:00 AM - 11:30 AM" },
     // Add more messages as needed
 ];
 
